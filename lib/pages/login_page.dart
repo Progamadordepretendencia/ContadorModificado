@@ -13,8 +13,9 @@ class _LoginPageState extends State<LoginPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-        body: SizedBox(
-          width: double.infinity,
+        body: SingleChildScrollView(
+          child: ConstrainedBox(constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -52,6 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
                 alignment: Alignment.center,
                 child: const TextField(
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(top: 0),
                     enabledBorder: UnderlineInputBorder(
@@ -73,6 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
                 alignment: Alignment.center,
                 child: const TextField(
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(top: 0),
                     enabledBorder: UnderlineInputBorder(
@@ -137,6 +140,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-    );
+    ));
   }
 }
