@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:santandemapp/pages/dados_cadastrais.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -15,19 +16,39 @@ class _MainPageState extends State<MainPage> {
         appBar: AppBar(title: const Text("Meu app")
         
         ),
-        drawer: const Drawer(
+        drawer:  Drawer(
           child: Padding(
-            padding:  EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+            padding:  const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Dados cadastráis"),
-                Divider(),
-                SizedBox(height: 10,),
-                Text("Termos de uso e privacidade"),
-                Divider(),
-                SizedBox(height: 10,),
-                Text("Configurações")
+                InkWell(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    width: double.infinity,
+                    child: const Text("Dados cadastráis")),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(context, 
+                  MaterialPageRoute(
+                    builder: (context)=> const DadosCadastrais(
+                      texto: "Meus dados",
+                      dados: ["Nome", "Endereço"],
+                    )));
+                },
+                ),
+                const Divider(),
+                const SizedBox(height: 10,),
+                 InkWell(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    width: double.infinity,
+                    child: const Text("Termos de uso e privacidade")),
+                onTap: () {},
+                ),
+                const Divider(),
+                const SizedBox(height: 10,),
+                const Text("Configurações")
               ],
             ),
           ),
