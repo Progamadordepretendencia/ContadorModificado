@@ -13,7 +13,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: const Text("Meu app")
+        appBar: AppBar(title: const Text("Main Page")
         
         ),
         drawer:  Drawer(
@@ -52,6 +52,12 @@ class _MainPageState extends State<MainPage> {
               ],
             ),
           ),
+        ),
+        body: PageView(children: [
+
+            Container(color: Colors.deepOrange,
+            ),
+          ],
         ),
       ),
     );
